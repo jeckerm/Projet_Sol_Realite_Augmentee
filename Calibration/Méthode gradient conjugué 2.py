@@ -21,18 +21,10 @@ def produit_scalaire_vecteurs(X,Y,A="Vide"):
         print ("Produit scalaire avec deux vecteurs de dimensions différentes ou une matice de dimension inadaptée")
         return(0)
     else:
-        """Z= np.eye(1,n)
-        for i in range (0,n):
-            Z[0,i] = X[i,0]
-        Z=Z*A
-        print(Z)
-        print(X)
-        S = float(Z*X)
-        return(S)"""
         return(((np.transpose(X))*A*Y)[0,0])
 
 def gradient(A,b, x0,eps0, eps1, kmax):
-    r = A*x0-b
+    r = b-A*x0
     #print(A)
     #print(x0)
     #print(b)
@@ -42,21 +34,21 @@ def gradient(A,b, x0,eps0, eps1, kmax):
     #print("r: ",r)
     diff_normes_x = eps0+1
     k = 0
+    rho=r
     x = x0
     while (diff_normes_x>eps0) and k<=kmax and norme_vecteur(r)>eps1:
         #print(k)
-        if k == 0:
-            d = r
-        else:
-            alpha = - (produit_scalaire_vecteurs(r,d,A))/(produit_scalaire_vecteurs(d,d,A))
-            d = r + alpha*d
-            #print("d", d)
+        alpha = - (norme_vecteur(r))/(produit_scalaire_vecteurs(rho,rho,A))
+        x0 = x
+        x = x + alpha*rho
+        diff_normes_x= norme_vecteur(x-x0)
+        r0=r
+        r=r-alpha*A*rho
+        beta = norme_vecteur(r)/norme_vecteur(r0)
+        rho = r + beta*rho
+        #print("d", d)
         #print("Produit scalaire:", produit_scalaire_vecteurs(d,d,A))
-        rho = - (produit_scalaire_vecteurs(r,d,A))/(produit_scalaire_vecteurs(d,d,A))
-        x0, x = x, x + rho*d
         #print(x0 , x)
-        r= A*x - b
         k = k + 1
         #print(x-x0)
-        diff_normes_x= norme_vecteur(x-x0)
     return(x, k,diff_normes_x)
