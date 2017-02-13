@@ -1,5 +1,7 @@
 def optimize(A,b, x0=None,eps0=None, eps1=None, kmax=None):
-    return(np.linalg.inv(A)*b)
+    print("resultat np.ilnalg.lstq(A,b) :")
+    print(np.linalg.lstsq(A,b))
+    return(np.linalg.lstsq(A,b))
 
 
 def build_A(LX):
@@ -23,14 +25,16 @@ def build_b(Lx):
             L.append(Lx[i][j])
     l=[0 for i in range(0,p)]
     L=L+l
-    return(np.matrix(L))
+    return(np.transpose(np.matrix(L)))
     
 def build_H(h):
     p = np.size(h)
     H=np.matrix(np.zeros((3,4)))
+    print("h[0,0]")
+    print(h[0,0])
     for i in range(0,3):
         for j in range(0,4):
-            H[i,j] = h[0, 4*i+j]
+            H[i,j] = h[4*i+j,0]
     return(H)
     
 
@@ -39,9 +43,13 @@ def homography(Lx,LX):
     #LX rassemble l'ensemble des coordonnées des points mesurés sur le sol sous la forme: LX = [[X1,Y1],[X2,Y2]...]
     A=build_A(LX)
     b=build_b(Lx)
+    print("A=")
     print(A)
+    print("b=")
     print(b)
-    h=optimize(A,b)
+    h=optimize(A,b)[0]
+    print("h=")
+    print(type(h))
+    print(h)
     H=build_H(h)
     return(H)
-        
