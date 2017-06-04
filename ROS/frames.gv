@@ -1,0 +1,37 @@
+digraph G {
+"leg_0_3" -> "force_sensor_0"[label="Broadcaster: /link0_broadcaster\nAverage rate: 75.486 Hz\nMost recent transform: 1489498862.815 ( 0.010 sec old)\nBuffer length: 4.862 sec\n"];
+"leg_0_2" -> "leg_0_3"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"force_sensor_2" -> "optoforce_3"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 866.575 Hz\nMost recent transform: 1489498859.354 ( 3.470 sec old)\nBuffer length: 1.426 sec\n"];
+"leg_2_3" -> "force_sensor_2"[label="Broadcaster: /link3_broadcaster\nAverage rate: 75.504 Hz\nMost recent transform: 1489498862.815 ( 0.010 sec old)\nBuffer length: 4.808 sec\n"];
+"force_sensor_5" -> "optoforce_6"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 867.793 Hz\nMost recent transform: 1489498859.354 ( 3.470 sec old)\nBuffer length: 1.427 sec\n"];
+"leg_5_3" -> "force_sensor_5"[label="Broadcaster: /link1_broadcaster\nAverage rate: 75.753 Hz\nMost recent transform: 1489498862.815 ( 0.010 sec old)\nBuffer length: 4.765 sec\n"];
+"force_sensor_4" -> "optoforce_5"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 907.923 Hz\nMost recent transform: 1489498859.355 ( 3.469 sec old)\nBuffer length: 1.426 sec\n"];
+"leg_4_3" -> "force_sensor_4"[label="Broadcaster: /link2_broadcaster\nAverage rate: 75.753 Hz\nMost recent transform: 1489498862.815 ( 0.010 sec old)\nBuffer length: 4.765 sec\n"];
+"force_sensor_0" -> "optoforce_1"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 871.254 Hz\nMost recent transform: 1489498859.354 ( 3.470 sec old)\nBuffer length: 1.426 sec\n"];
+"force_sensor_1" -> "optoforce_2"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 899.100 Hz\nMost recent transform: 1489498859.354 ( 3.470 sec old)\nBuffer length: 1.426 sec\n"];
+"leg_1_3" -> "force_sensor_1"[label="Broadcaster: /link4_broadcaster\nAverage rate: 75.504 Hz\nMost recent transform: 1489498862.815 ( 0.010 sec old)\nBuffer length: 4.808 sec\n"];
+"force_sensor_3" -> "optoforce_4"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 911.584 Hz\nMost recent transform: 1489498859.355 ( 3.469 sec old)\nBuffer length: 1.426 sec\n"];
+"leg_3_3" -> "force_sensor_3"[label="Broadcaster: /link5_broadcaster\nAverage rate: 75.440 Hz\nMost recent transform: 1489498862.730 ( 0.094 sec old)\nBuffer length: 4.692 sec\n"];
+"base_link" -> "leg_0_1"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"world" -> "base_link"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 116.473 Hz\nMost recent transform: 1489498859.350 ( 3.475 sec old)\nBuffer length: 1.417 sec\n"];
+"base_link" -> "leg_1_1"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"base_link" -> "leg_2_1"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"base_link" -> "leg_3_1"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"base_link" -> "leg_4_1"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"base_link" -> "leg_5_1"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_0_1" -> "leg_0_2"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_1_1" -> "leg_1_2"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_1_2" -> "leg_1_3"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_2_1" -> "leg_2_2"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_2_2" -> "leg_2_3"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_3_1" -> "leg_3_2"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_3_2" -> "leg_3_3"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_4_1" -> "leg_4_2"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_4_2" -> "leg_4_3"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_5_1" -> "leg_5_2"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+"leg_5_2" -> "leg_5_3"[label="Broadcaster: /play_1493718435205424668\nAverage rate: 15.980 Hz\nMost recent transform: 1489498859.306 ( 3.518 sec old)\nBuffer length: 1.377 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1489498862.824"[ shape=plaintext ] ;
+ }->"world";
+}

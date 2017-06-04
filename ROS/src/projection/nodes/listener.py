@@ -1,0 +1,37 @@
+#!/usr/bin/env python  
+import roslib
+roslib.load_manifest('projection')
+import rospy
+import math
+import tf
+import geometry_msgs.msg
+import tests_affichages
+from geometry_msgs.msg import WrenchStamped
+
+
+
+def listener():
+    print("je me lance")
+    rospy.init_node('tf_listener')
+    listener_tf = tf.TransformListener()
+    rate = rospy.Rate(1.0)
+    L = []
+    print("J'ai souscrit")
+    while not rospy.is_shutdown():
+        try:
+            if listener_tf.frameExists('/base_link'):
+                print("Existe")
+                (trans,rot) = listener_tf.lookupTransform('base_link', '/world', rospy.Time(0)) #le temps de ce noeud bug ac le ros bag...
+                print("Force")
+                x =tests_affichages.fois_dix(trans[0])
+                print(trans[0],x)
+            else:
+                print("NotExist")
+        except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
+            print("Exception")
+            continue
+
+    rate.sleep()
+    
+if __name__ == '__main__':
+    listener()
