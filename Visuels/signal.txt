@@ -1,0 +1,5 @@
+punched = pyqtSignal(float,float,float,float)
+punched.emit(x,y,z,t)
+@pyqtSlot(float,float,float,float)
+def f(x,y,z,t):
+   machin

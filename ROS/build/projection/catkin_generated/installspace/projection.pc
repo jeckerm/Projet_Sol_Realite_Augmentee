@@ -1,8 +1,0 @@
-prefix=/home/henry/Documents/Projet_Dep_Info/install
-
-Name: projection
-Description: Description of projection
-Version: 0.0.0
-Cflags: -I/home/henry/Documents/Projet_Dep_Info/install/include
-Libs: -L/home/henry/Documents/Projet_Dep_Info/install/lib 
-Requires: 

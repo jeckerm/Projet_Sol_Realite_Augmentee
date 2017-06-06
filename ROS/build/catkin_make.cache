@@ -1,2 +1,0 @@
-projection
--DCATKIN_DEVEL_PREFIX=/home/henry/Documents/Projet_Dep_Info/devel -DCMAKE_INSTALL_PREFIX=/home/henry/Documents/Projet_Dep_Info/install -G Unix Makefiles

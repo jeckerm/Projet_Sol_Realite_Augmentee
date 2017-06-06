@@ -1,0 +1,97 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jun  6 09:19:51 2017
+
+@author: henry
+"""
+
+class Popup(QtGui.QWidget):
+    def __init__(self):
+        super(Popup, self).__init__()
+        self.setGeometry(0,0,200,200)
+        self.layout = QtGui.QGridLayout(self)
+        self.c11 = QtGui.QLineEdit(self)
+        self.c21 = QtGui.QLineEdit(self)
+        self.c12 = QtGui.QLineEdit(self)
+        self.c22 = QtGui.QLineEdit(self)
+        self.enter = QtGui.QButton()
+        self.layout.addWidget(self.c11, 0, 0)
+        self.layout.addWidget(self.c21, 1, 0)
+        self.layout.addWidget(self.c12, 0, 1)
+        self.layout.addWidget(self.c22, 1, 1)
+        self.setLayout(self.layout)
+        self.show()
+
+
+class ImageDamier():
+    
+    def __init__(self):
+        
+        self.image = QtGui.QImage(384, 216, QtGui.QImage.Format_RGB32)
+        self.image.fill(QtCore.Qt.white)
+        p = QtGui.QPainter(self.image) 
+        p.setBrush(QtGui.QBrush(QtCore.Qt.black))
+        for i in range(4):
+            for j in range(4):
+                if (i + j) % 2 == 0:
+                    p.drawRect(i * 96, j * 54, 96, 54)
+                
+    def transformers(self, c11, c21, c12, c22):
+        
+        xA = 0
+        yA = 0
+        
+        xB = self.image.width() * c11
+        yB = self.image.width() * c21
+        
+        xC = self.image.height() * c12
+        yC = self.image.height() * c22
+        
+        xD = self.image.width() * c11 + self.image.height() * c21
+        yD = self.image.width() * c12 + self.image.height() * c22
+        
+        qx = 384/max(abs(xA-xB), abs(xC-xD))
+        qy = 216/max(abs(yA-yC), abs(yB-yD))
+        
+        improcessed = QtGui.QImage(384,216,QtGui.QImage.Format_RGB32)
+        improcessed.fill(QtCore.Qt.white)
+        for i in range(385):
+            for j in range(216):
+                
+                x = (i * c11 + j * c21) * qx 
+                y = (i * c12 + j * c22) * qy
+                
+                improcessed.setPixel(x, y, self.image.pixel(i,j))
+        
+        self.image = improcessed
+        
+class Damier(QtGui.QWidget):
+    
+    def __init__(self):
+        
+        super(Damier, self).__init__()
+        self.damier = ImageDamier()
+
+    def paintEvent(self, event):
+        p = QtGui.QPainter(self) 
+        p.drawImage(0, 0, self.damier.image.scaled(1920,1080))
+        
+    def transformDamier(self, c11, c21, c12, c12):
+        self.damier.transformers(c11, c21, c12, c12) #(458, -2.64, 2.35, 461)
+        self.update()
+            
+class Window(QtGui.QMainWindow):
+
+    def __init__(self):
+        
+        super(Window, self).__init__()
+        
+        self.image = Damier()
+        
+        self.setCentralWidget(self.image)
+        self.setGeometry(0, 0, 1920, 1080)
+        self.show()
+    
+app = QtGui.QApplication(sys.argv)
+ex = Window()
+sys.exit(app.exec_())

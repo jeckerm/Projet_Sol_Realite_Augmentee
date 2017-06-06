@@ -1,3 +1,0 @@
-<launch>
-  <node pkg="projection" name="listener_test" type="listener_tf"/>
-</launch>
