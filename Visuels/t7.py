@@ -66,13 +66,15 @@ class ImageDamier():
         qx = 384/max(abs(xA-xB), abs(xC-xD))
         qy = 216/max(abs(yA-yC), abs(yB-yD))
         
+        q = min(qx, qy)
+        
         improcessed = QtGui.QImage(384,216,QtGui.QImage.Format_RGB32)
         improcessed.fill(QtCore.Qt.white)
         for i in range(385):
             for j in range(216):
                 
-                x = (i * c11 + j * c21) * qx 
-                y = (i * c12 + j * c22) * qy
+                x = (i * c11 + j * c21) * q
+                y = (i * c12 + j * c22) * q
                 
                 improcessed.setPixel(x, y, self.image.pixel(i,j))
         
