@@ -1,3 +1,5 @@
+import numpy as np
+
 def optimize(A,b, x0=None,eps0=None, eps1=None, kmax=None):
     #print(len(A), np.size(A)/len(A),np.size(b))
     #print("resultat np.ilnalg.lstq(A,b) :")
